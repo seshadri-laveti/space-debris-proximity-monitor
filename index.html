@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space Debris Proximity Monitor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <p class="eyebrow">SPACE SITUATIONAL AWARENESS · EDUCATIONAL DEMO</p>
+    <h1>Space Debris Proximity Monitor</h1>
+    <p class="subtitle">Satellite tracking · Close-approach screening · Trajectory illustration</p>
+    <p class="author">Project by Laveti Seshadri · VIIT</p>
+  </header>
+  <main>
+    <div class="notice"><strong>Demo data only:</strong> values shown here are synthetic sample coordinates, not live satellite tracking or operational collision predictions.</div>
+    <section class="cards" aria-label="Summary">
+      <article class="card"><span>Samples</span><strong id="sampleCount">—</strong></article>
+      <article class="card"><span>Closest separation</span><strong id="minDistance">—</strong></article>
+      <article class="card"><span>Demo threshold</span><strong id="threshold">1.00 km</strong></article>
+      <article class="card"><span>Demo status</span><strong id="status">—</strong></article>
+    </section>
+    <section class="panel">
+      <h2>Relative separation over time</h2>
+      <p class="muted">Calculated from the bundled sample CSV values.</p>
+      <div class="chart-wrap"><canvas id="chart" width="900" height="300" aria-label="Relative separation chart"></canvas></div>
+    </section>
+    <section class="panel">
+      <h2>Sample records</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Time (s)</th><th>Separation (km)</th><th>Demo status</th></tr></thead>
+          <tbody id="records"></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Next development steps</h2>
+      <ul>
+        <li>Integrate a documented and verified orbital tracking dataset.</li>
+        <li>Record coordinate frame, epoch, units, and uncertainty.</li>
+        <li>Validate close-approach screening against a trusted reference.</li>
+        <li>Use an orbital dynamics model before making any maneuver claims.</li>
+      </ul>
+    </section>
+  </main>
+  <footer>Laveti Seshadri · Educational prototype · Not for operational decisions</footer>
+  <script src="script.js"></script>
+</body>
+</html>
